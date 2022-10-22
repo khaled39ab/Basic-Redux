@@ -1,4 +1,5 @@
 import React from 'react';
+import reduxWork from './../../images/redux-work.png'
 
 const Theory = () => {
     return (
@@ -53,6 +54,19 @@ const Theory = () => {
                         <li><strong>Redux-toolkit: </strong> recommended way to write redux logic for building redux app easily and avoiding mistakes.</li>
                         <li><strong>Redux devtools extension:</strong> helps to debug redux app easily.</li>
                     </ul>
+                </p>
+            </div>
+
+            <div>
+                <h1 style={{ 'textAlign': 'center' }}>How Redux works?</h1>
+                <p>
+                    <ol>
+                        <li>Define state.</li>
+                        <li>Dispatch an Action.</li>
+                        <li>Reducer update state based on Action Type.</li>
+                        <li>store will update the view</li>
+                    </ol>
+                    <img style={{'width': "50%"}} src={reduxWork} alt="" />
                 </p>
             </div>
         </div>
