@@ -21,11 +21,27 @@ const Theory = () => {
             </div>
             <div>
                 <h1 style={{ 'textAlign': 'center' }}>Why Redux?</h1>
-                <ul>
-                    <li>The store of the whole application is stored in an object tree within a single store.</li>
-                    <li>The only way to change state is to emit an action, an object describing what happened.</li>
-                    <li>To specify how the state tree is transformed by action, you write pure reducers.</li>
-                </ul>
+                <p>
+                    <strong>Redux: Three principles</strong>
+                    <ul>
+                        <li>The store of the whole application is stored in an object tree within a single store.</li>
+                        <li>The only way to change state is to emit an action, an object describing what happened.</li>
+                        <li>To specify how the state tree is transformed by action, you write pure reducers.</li>
+                    </ul>
+                </p>
+            </div>
+            <div>
+                <h1 style={{ 'textAlign': 'center' }}>When to use Redux?</h1>
+                <p>
+                    Not all apps need Redux. It's important to understand the kind of application you're building, the kinds of problems that you need to solve, and what tools can best solve the problems you're facing. <br /> <br />
+
+                    <strong>Here are some scenarios when Redux might be the best solution: </strong>
+                    <ul>
+                        <li>When multiple components need to access the same application state.</li>
+                        <li>When you're working on a large application with several other people.</li>
+                        <li>When application state is updated frequently.</li>
+                    </ul>
+                </p>
             </div>
         </div>
     );
