@@ -23,6 +23,8 @@ const Theory = () => {
                 <h1 style={{ 'textAlign': 'center' }}>Why Redux?</h1>
                 <ul>
                     <li>The store of the whole application is stored in an object tree within a single store.</li>
+                    <li>The only way to change state is to emit an action, an object describing what happened.</li>
+                    <li>To specify how the state tree is transformed by action, you write pure reducers.</li>
                 </ul>
             </div>
         </div>
