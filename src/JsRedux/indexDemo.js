@@ -1,4 +1,13 @@
+/* 
+1- initial state
+2- dispatch action
+3- reducer 
+4- store
+*/
+
+/****************************/
 // state initialize/declare 
+/****************************/
 const initialCounterState = {
     count: 0
 };
@@ -9,8 +18,9 @@ const initialUserSate = {
     ]
 }
 
-
-// Action - is an object. It have 2 elements type and payload
+/***************************************************************/
+// Action - is an object. It have 2 elements, type and payload
+/***************************************************************/
 
 //increment action
 const incrementCounter = () => {
