@@ -18,3 +18,17 @@ const incrementCounter = () => {
         type: 'INCREMENT'
     }
 }
+
+const decrementCounter = () => {
+    return {
+        type: 'DECREMENT'
+    }
+}
+
+//Add user with passing data via payload
+const addUser = () => {
+    return {
+        type: 'ADD_USER',
+        payload: { name: 'Mahmud' }
+    }
+}
