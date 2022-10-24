@@ -12,6 +12,8 @@ const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 const ADD_USER = 'ADD_USER';
 
+const { createStore } = require('redux');
+
 const initialCounterState = {
     count: 0
 };
@@ -86,8 +88,26 @@ const counterReducer = (state = initialCounterState, action) => {
                 count: state.count - 1
             };
         default:
-            return {
-                state
-            }
+            return state;
+
     }
 }
+
+
+/***************************************************************/
+//store-is holding the state. It's has 3 methods. getState(), getDispatch(), subscribe() 
+/***************************************************************/
+
+//create store
+const store = createStore(counterReducer);
+
+store.subscribe(()=>{
+    console.log(store.getState());
+});
+
+//dispatch an action
+store.dispatch(incrementCounter());
+store.dispatch(incrementCounter());
+store.dispatch(decrementCounter());
+store.dispatch(incrementCounter());
+
