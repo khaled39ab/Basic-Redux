@@ -2,6 +2,7 @@ import React from 'react';
 
 const MultipleReducer = () => {
     const ADD_PRODUCT = 'ADD_PRODUCT';
+    const GET_PRODUCT = 'GET_PRODUCT';
 
     const { createStore } = require('redux');
 
@@ -9,6 +10,13 @@ const MultipleReducer = () => {
         products: ['Rice', 'Sugar'],
         items: 2
     }
+
+    const getProduct = () => {
+        return {
+            type: GET_PRODUCT
+        }
+    }
+
     const addProduct = (product) => {
         return {
             type: ADD_PRODUCT,
@@ -23,6 +31,8 @@ const MultipleReducer = () => {
                     products: [...state.products, action.payload],
                     items: state.items + 1
                 }
+            case GET_PRODUCT:
+                return { ...state }
 
             default:
                 return state;
@@ -31,10 +41,11 @@ const MultipleReducer = () => {
 
     const store = createStore(productsReducer);
 
-    store.subscribe(() =>{
+    store.subscribe(() => {
         console.log(store.getState());
     })
 
+    store.dispatch(getProduct())
     store.dispatch(addProduct('Salt'))
 
     return (
