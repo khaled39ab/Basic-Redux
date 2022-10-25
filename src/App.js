@@ -1,12 +1,12 @@
 import './App.css';
 import Theory from './page/Class/Theory';
-import IndexDemo from './JsRedux/IndexDemo'
+import Fundametal from './primaryRedux/Fundametal';
 
 function App() {
   return (
     <div>
       {/* <Theory></Theory> */}
-      <IndexDemo></IndexDemo>
+      <Fundametal></Fundametal>
     </div>
   );
 }

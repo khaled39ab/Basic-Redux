@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IndexDemo = () => {
+const Fundametal = () => {
     /* 
 1- initial state
 2- dispatch action
@@ -155,4 +155,4 @@ const IndexDemo = () => {
     );
 };
 
-export default IndexDemo;
+export default Fundametal;
