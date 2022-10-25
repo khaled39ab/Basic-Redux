@@ -23,9 +23,8 @@ const IndexDemo = () => {
     };
 
     const initialUserSate = {
-        user: [
-            { name: 'Ahmadullah' }
-        ]
+        user: ['Ahmadullah'],
+        userCount: 1
     }
 
     /***************************************************************/
@@ -54,10 +53,10 @@ const IndexDemo = () => {
     }
 
     //Add user with passing data via payload
-    const addUser = () => {
+    const addUser = (user) => {
         return {
             type: ADD_USER,
-            payload: { name: 'Mahmud' }
+            payload: user
         }
     }
 
@@ -109,6 +108,18 @@ const IndexDemo = () => {
         }
     }
 
+    const userReducer = (state = initialUserSate, action) => {
+        switch (action.type) {
+            case ADD_USER:
+                return {
+                    user: [...state.user, action.payload],
+                    userCount: state.userCount + 1
+                }
+            default:
+                return state;
+        }
+    }
+
 
     /***************************************************************/
     //store-is holding the state. It's has 3 methods. getState(), getDispatch(), subscribe() 
@@ -116,10 +127,15 @@ const IndexDemo = () => {
 
     //create store
     const store = createStore(counterReducer);
+    const store2 = createStore(userReducer);
 
     store.subscribe(() => {
         console.log(store.getState());
     });
+
+    store2.subscribe(() => {
+        console.log(store2.getState());
+    })
 
     //dispatch an action
     store.dispatch(incrementCounter());
@@ -129,6 +145,8 @@ const IndexDemo = () => {
     store.dispatch(resetCounter());
     store.dispatch(incrementCounter());
 
+    store2.dispatch(addUser('Mahmud'))
+    store2.dispatch(addUser('Jaman'))
 
     return (
         <div>
