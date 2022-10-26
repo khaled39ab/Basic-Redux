@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       {/* <Theory></Theory> */}
-      <Fundamental></Fundamental>
+      {/* <Fundamental></Fundamental> */}
       <MultipleReducer></MultipleReducer>
     </div>
   );

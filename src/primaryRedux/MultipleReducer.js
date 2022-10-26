@@ -6,7 +6,7 @@ const MultipleReducer = () => {
     const GET_CART = 'GET_CART';
     const ADD_CART = 'ADD_CART';
 
-    const { createStore } = require('redux');
+    const { createStore, combineReducers } = require('redux');
 
     // initialize state
     const initialProducts = {
@@ -81,14 +81,22 @@ const MultipleReducer = () => {
         }
     }
 
+    // combine multiple reducer
+    const combineReducer = combineReducers({
+        cartRe: cartReducer,
+        productRe: productsReducer
+    })
 
-    const store = createStore(productsReducer);
+    const store = createStore(combineReducer);
     store.subscribe(() => {
         console.log(store.getState());
     })
 
     store.dispatch(getProduct())
     store.dispatch(addProduct('Salt'))
+
+    store.dispatch(getCart())
+    store.dispatch(addCart('Chocolate'))
 
     return (
         <div>
