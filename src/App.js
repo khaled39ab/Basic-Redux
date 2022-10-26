@@ -1,13 +1,13 @@
 import './App.css';
 import Theory from './page/Class/Theory';
-import Fundametal from './primaryRedux/Fundametal';
+import Fundamental from './primaryRedux/Fundamental';
 import MultipleReducer from './primaryRedux/MultipleReducer';
 
 function App() {
   return (
     <div>
       {/* <Theory></Theory> */}
-      {/* <Fundametal></Fundametal> */}
+      <Fundamental></Fundamental>
       <MultipleReducer></MultipleReducer>
     </div>
   );

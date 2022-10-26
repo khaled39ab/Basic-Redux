@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Fundametal = () => {
+const Fundamental = () => {
     /* 
 1- initial state
 2- dispatch action
@@ -150,9 +150,9 @@ const Fundametal = () => {
 
     return (
         <div>
-            <h1>Redux</h1>
+            <h1>Fundamental Redux</h1>
         </div>
     );
 };
 
-export default Fundametal;
+export default Fundamental;
