@@ -1,2 +1,2 @@
 # This is a learning project of Redux.
-## Basic learn from youtube.
+## Basic learning of redux is from youtube.
