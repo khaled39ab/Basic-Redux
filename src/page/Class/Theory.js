@@ -16,7 +16,7 @@ const Theory = () => {
                     </q> <br /> <br />
 
                     <strong>Normally:</strong> <br />
-                    Redux is a small JS Library. It's for managing medium/large amount of states globally in your app.
+                    Redux is a small JS Library. It's for managing medium/large amount of states globally in our app.
                 </p>
             </div>
 
@@ -35,7 +35,7 @@ const Theory = () => {
             <div>
                 <h1 style={{ 'textAlign': 'center' }}>When to use Redux?</h1>
                 <p>
-                    Not all apps need Redux. It's important to understand the kind of application you're building, the kinds of problems that you need to solve, and what tools can best solve the problems you're facing. <br /> <br />
+                    Not all apps need Redux. It's important to understand the kind of application we're building, the kinds of problems that you need to solve, and what tools can best solve the problems you're facing. <br /> <br />
 
                     <strong>Here are some scenarios when Redux might be the best solution: </strong>
                     <ul>

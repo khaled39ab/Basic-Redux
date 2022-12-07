@@ -6,8 +6,8 @@ import MultipleReducer from './primaryRedux/MultipleReducer';
 function App() {
   return (
     <div>
-      {/* <Theory></Theory> */}
-      {/* <Fundamental></Fundamental> */}
+      <Theory></Theory>
+      <Fundamental></Fundamental>
       <MultipleReducer></MultipleReducer>
     </div>
   );
