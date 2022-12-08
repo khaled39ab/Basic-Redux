@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Fundamental = () => {
-    /* 
+/* 
 1- initial state
 2- dispatch action
 3- reducer 
