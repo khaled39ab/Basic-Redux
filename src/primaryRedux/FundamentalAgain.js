@@ -76,7 +76,7 @@ const FundamentalAgain = () => {
     const store = createStore(counterReducer);
 
     store.subscribe(()=>{
-        setViewCount(store.getState().count);
+        console.log(store.getState().count);
     });
     
     const handleIncrement = () =>{
@@ -91,7 +91,7 @@ const FundamentalAgain = () => {
         <div className="counter center">
             <h1 className="counter__title">Counter App with Redux</h1>
             <div className="card center">
-                <h2 className="card__title">Count : {viewCount}</h2>
+                <h2 className="card__title">Count :</h2>
                 <div className="card__btn">
                     <button className="btn card__btn" onClick={handleDecrement}>-</button>
                     <button className="btn card__btn" onClick={handleIncrement}>+</button>
