@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import './Fundamental.css'
 
 const FundamentalAgain = () => {
@@ -75,23 +76,25 @@ const FundamentalAgain = () => {
     const store = createStore(counterReducer);
 
     store.subscribe(()=>{
-        console.log(store.getState());
+        setViewCount(store.getState().count);
     });
-
-    store.dispatch(incrementCounter())
-    store.dispatch(incrementCounter())
-    store.dispatch(incrementCounter())
-    store.dispatch(decrementCounter())
-    store.dispatch(incrementCounter())
+    
+    const handleIncrement = () =>{
+        store.dispatch(incrementCounter())
+    }
+   
+    const handleDecrement = () =>{
+        store.dispatch(decrementCounter())
+    }
 
     return (
         <div className="counter center">
             <h1 className="counter__title">Counter App with Redux</h1>
             <div className="card center">
-                <h2 className="card__title">Count : { }</h2>
+                <h2 className="card__title">Count : {viewCount}</h2>
                 <div className="card__btn">
-                    <button className="btn card__btn" >-</button>
-                    <button className="btn card__btn">+</button>
+                    <button className="btn card__btn" onClick={handleDecrement}>-</button>
+                    <button className="btn card__btn" onClick={handleIncrement}>+</button>
                 </div>
             </div>
         </div>
