@@ -12,7 +12,7 @@ const Navbar = () => {
             <nav className='nav'>
                 <NavLink className='link' to={'/'}>Home</NavLink>
                 <NavLink className='link' to={'/theory'}>Theory</NavLink>
-                <NavLink className='link' to={'/fundamental'}>Fundamental</NavLink>
+                <NavLink className='link' to={'/counter-app'}>Counter APP</NavLink>
                 <NavLink className='link' to={'/multipleReducer'}>Multiple Reducer</NavLink>
             </nav>
         </div>

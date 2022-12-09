@@ -3,11 +3,11 @@ import './App.css';
 import Theory from './page/Class/Theory';
 import Home from './page/home/Home';
 import Navbar from './page/navbar/Navbar';
-import Fundamental from './primaryRedux/Fundamental';
+import FundamentalAgain from './primaryRedux/FundamentalAgain';
 import MultipleReducer from './primaryRedux/MultipleReducer';
 
 function App() {
-  
+
   return (
     <div>
       <Navbar />
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/theory' element={<Theory />}></Route>
-        <Route path='/fundamental' element={<Fundamental />}></Route>
+        <Route path='/counter-app' element={<FundamentalAgain />}></Route>
         <Route path='/multipleReducer' element={<MultipleReducer />}></Route>
       </Routes>
     </div>

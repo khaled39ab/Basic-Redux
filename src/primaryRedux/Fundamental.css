@@ -1,0 +1,49 @@
+  .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .counter {
+    height: 100vh;
+    padding: 1rem;
+  }
+  
+  .counter__title {
+    color: var(--text-color);
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: orange;
+  }
+  
+  .card {
+    background-color: #3c3c3c;
+    width: 100%;
+    max-width: 30rem;
+    color: rgb(195, 154, 77);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+  }
+  
+  .btn {
+    border: none;
+    padding: 0.1rem 0.6rem;
+    border-radius: var(--border-radius);
+    font-size: 1.6rem;
+    transition: all 0.3s;
+    margin: 0 0.2rem;
+    color: rgb(195, 154, 77);
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: orange;
+    color: black;
+  }
+  
+  .btn:disabled {
+    background-color: red;
+  }
+  
