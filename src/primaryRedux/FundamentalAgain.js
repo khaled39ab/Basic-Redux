@@ -10,13 +10,26 @@ const FundamentalAgain = () => {
 
     const INCREMENT = 'INCREMENT';
     const DECREMENT = 'DECREMENT';
-    
+    const ADD_USER = 'ADD_USER';
+
     // initial state--
     const initialCounterState = {
-        count: 0
+        count: 0,
     }
 
-    // dispatch action -- action have 2 things. 1-type 2-payload
+    const initialUser = {
+        User: ['Khaled'],
+        NumberOfUser: 1
+    }
+
+    // dispatch action -- action is an object. It have 2 things. 1-type 2-payload
+    const addUser = (user) => {
+        return {
+            type: ADD_USER,
+            payload: user
+        }
+    }
+
     const incrementCounter = () => {
         return {
             type: INCREMENT,
@@ -26,6 +39,34 @@ const FundamentalAgain = () => {
     const decrementCounter = () => {
         return {
             type: DECREMENT,
+        }
+    }
+
+    const counterReducer = (state = initialUser, action) => {
+        switch (action.type) {
+            case INCREMENT:
+                return {
+                    count: state.count + 1
+                }
+            case DECREMENT:
+                return {
+                    count: state.count - 1
+                }
+            default:
+                return state
+        }
+    }
+
+    const userReducer = (state = initialCounterState, action) => {
+        switch (action.type) {
+            case ADD_USER:
+                return {
+                    User: [...state.user, action.payload],
+                    NumberOfUser: state.NumberOfUser + 1
+                }
+
+            default:
+                return state;
         }
     }
 

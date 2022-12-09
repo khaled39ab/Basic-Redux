@@ -14,7 +14,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='/class' element={<Theory />}></Route>
+        <Route path='/theory' element={<Theory />}></Route>
         <Route path='/fundamental' element={<Fundamental />}></Route>
         <Route path='/multipleReducer' element={<MultipleReducer />}></Route>
       </Routes>
