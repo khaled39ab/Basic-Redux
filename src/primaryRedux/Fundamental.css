@@ -12,7 +12,7 @@
   }
   
   .counter__title {
-    color: var(--text-color);
+    color: #fff;
     font-size: 2rem;
     margin-bottom: 3rem;
     color: orange;
@@ -24,13 +24,13 @@
     max-width: 30rem;
     color: rgb(195, 154, 77);
     padding: 1rem;
-    border-radius: var(--border-radius);
+    border-radius: 0.6rem;
   }
   
   .btn {
     border: none;
     padding: 0.1rem 0.6rem;
-    border-radius: var(--border-radius);
+    border-radius: 0.6rem;
     font-size: 1.6rem;
     transition: all 0.3s;
     margin: 0 0.2rem;

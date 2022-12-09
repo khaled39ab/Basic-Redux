@@ -8,6 +8,7 @@ const FundamentalAgain = () => {
     3- reducer 
     4- store
     */
+   const {createStore} = require ('redux');
 
     const INCREMENT = 'INCREMENT';
     const DECREMENT = 'DECREMENT';
@@ -15,7 +16,7 @@ const FundamentalAgain = () => {
 
     // initial state--
     const initialCounterState = {
-        count: 0,
+        count: 0
     }
 
     const initialUser = {
@@ -43,7 +44,7 @@ const FundamentalAgain = () => {
         }
     }
 
-    const counterReducer = (state = initialUser, action) => {
+    const counterReducer = (state = initialCounterState, action) => {
         switch (action.type) {
             case INCREMENT:
                 return {
@@ -58,7 +59,7 @@ const FundamentalAgain = () => {
         }
     }
 
-    const userReducer = (state = initialCounterState, action) => {
+    const userReducer = (state = initialUser, action) => {
         switch (action.type) {
             case ADD_USER:
                 return {
@@ -71,9 +72,21 @@ const FundamentalAgain = () => {
         }
     }
 
+    const store = createStore(counterReducer);
+
+    store.subscribe(()=>{
+        console.log(store.getState());
+    });
+
+    store.dispatch(incrementCounter())
+    store.dispatch(incrementCounter())
+    store.dispatch(incrementCounter())
+    store.dispatch(decrementCounter())
+    store.dispatch(incrementCounter())
+
     return (
         <div className="counter center">
-            <h1 className="counter__title">Counter with Redux</h1>
+            <h1 className="counter__title">Counter App with Redux</h1>
             <div className="card center">
                 <h2 className="card__title">Count : { }</h2>
                 <div className="card__btn">
