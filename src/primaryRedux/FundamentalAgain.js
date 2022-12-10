@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import './Fundamental.css'
 
 const FundamentalAgain = () => {
@@ -9,10 +8,11 @@ const FundamentalAgain = () => {
     3- reducer 
     4- store
     */
-   const {createStore} = require ('redux');
+    const { createStore } = require('redux');
 
     const INCREMENT = 'INCREMENT';
     const DECREMENT = 'DECREMENT';
+    const RESET = 'RESET';
     const ADD_USER = 'ADD_USER';
 
     // initial state--
@@ -21,7 +21,7 @@ const FundamentalAgain = () => {
     }
 
     const initialUser = {
-        User: ['Khaled'],
+        User: ['Khalid'],
         NumberOfUser: 1
     }
 
@@ -45,6 +45,12 @@ const FundamentalAgain = () => {
         }
     }
 
+    const resetCounter = () => {
+        return {
+            type: RESET
+        }
+    }
+
     const counterReducer = (state = initialCounterState, action) => {
         switch (action.type) {
             case INCREMENT:
@@ -55,6 +61,10 @@ const FundamentalAgain = () => {
                 return {
                     count: state.count - 1
                 }
+            case RESET:
+                return {
+                    count: 0
+                }
             default:
                 return state
         }
@@ -64,7 +74,7 @@ const FundamentalAgain = () => {
         switch (action.type) {
             case ADD_USER:
                 return {
-                    User: [...state.user, action.payload],
+                    User: [...state.User, action.payload],
                     NumberOfUser: state.NumberOfUser + 1
                 }
 
@@ -73,18 +83,34 @@ const FundamentalAgain = () => {
         }
     }
 
-    const store = createStore(counterReducer);
+    //---------------------   store reducer    ----------------------
 
-    store.subscribe(()=>{
+    const store = createStore(counterReducer);
+    const userStore = createStore(userReducer);
+
+    store.subscribe(() => {
         console.log(store.getState().count);
     });
-    
-    const handleIncrement = () =>{
+
+    userStore.subscribe(()=>{
+        console.log(userStore.getState());
+    });
+
+    userStore.dispatch(addUser('Abdullah'))
+
+
+
+    //------------------------    Handle Button section    -----------------------
+    const handleIncrement = () => {
         store.dispatch(incrementCounter())
     }
-   
-    const handleDecrement = () =>{
+
+    const handleDecrement = () => {
         store.dispatch(decrementCounter())
+    }
+
+    const handleReset = () => {
+        store.dispatch(resetCounter())
     }
 
     return (
@@ -95,6 +121,7 @@ const FundamentalAgain = () => {
                 <div className="card__btn">
                     <button className="btn card__btn" onClick={handleDecrement}>-</button>
                     <button className="btn card__btn" onClick={handleIncrement}>+</button>
+                    <button className="btn card__btn" onClick={handleReset}>0</button>
                 </div>
             </div>
         </div>
