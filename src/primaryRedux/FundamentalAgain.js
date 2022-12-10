@@ -70,6 +70,9 @@ const FundamentalAgain = () => {
         }
     }
 
+
+    // ---------------------       Reducer       --------------------------
+
     const userReducer = (state = initialUser, action) => {
         switch (action.type) {
             case ADD_USER:
