@@ -7,7 +7,7 @@ const MultipleReducerAgain = () => {
    3- reducer 
    4- store
    */
-    const { createStore } = require('redux');
+    const { createStore, combineReducers } = require('redux');
 
     /* 
     #############################################################
@@ -104,20 +104,41 @@ const MultipleReducerAgain = () => {
 
     /* 
     #############################################################
+    *****************      combine reducer      *****************
+    #############################################################
+    */
+    const rootReducer = combineReducers({
+        productR: productsReducer,
+        cartR: cartReducer
+    });
+
+    const store = createStore(rootReducer)
+
+
+    /* 
+    #############################################################
     **********************      store      **********************
     #############################################################
     */
-    const productStore = createStore(productsReducer);
+    // const productStore = createStore(productsReducer);
 
-    productStore.subscribe(() => {
-        console.log(productStore.getState());
-    })
+    // productStore.subscribe(() => {
+    //     console.log(store.getState());
+    // });
+
+    store.subscribe(() => {
+        console.log(store.getState());
+    });
 
     //============   cart store   =============
-    const cartStore = createStore(cartReducer);
+    // const cartStore = createStore(cartReducer);
 
-    cartStore.subscribe(() => {
-        console.log(cartStore.getState());
+    // cartStore.subscribe(() => {
+    //     console.log(store.getState());
+    // });
+
+    store.subscribe(() => {
+        console.log(store.getState());
     });
 
 
@@ -127,11 +148,16 @@ const MultipleReducerAgain = () => {
     *****************      dispatch action      *****************
     #############################################################
     */
-    productStore.dispatch(getProducts());
-    productStore.dispatch(addProduct('pen'));
+    // productStore.dispatch(getProducts());
+    // productStore.dispatch(addProduct('pen'));
 
-    cartStore.dispatch(getCart());
-    cartStore.dispatch(addCart('cutter'))
+    // cartStore.dispatch(getCart());
+    // cartStore.dispatch(addCart('cutter'))
+    store.dispatch(getProducts());
+    store.dispatch(addProduct('pen'));
+
+    store.dispatch(getCart());
+    store.dispatch(addCart('cutter'))
 
     return (
         <div>
