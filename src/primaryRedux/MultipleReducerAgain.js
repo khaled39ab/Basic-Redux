@@ -9,11 +9,21 @@ const MultipleReducerAgain = () => {
    */
     const { createStore } = require('redux');
 
+    /* 
+    #############################################################
+    *******************      constants      *********************
+    #############################################################
+    */
     const GET_PRODUCTS = 'GET_PRODUCTS';
     const ADD_PRODUCT = 'ADD_PRODUCT';
     const GET_CART = 'GET_CART';
     const ADD_CART = 'ADD_CART';
 
+    /* 
+    #############################################################
+    ******************      initial state      ******************
+    #############################################################
+    */
     const initialProducts = {
         products: ['eraser', 'pencil'],
         numberOfProducts: 2
@@ -24,6 +34,11 @@ const MultipleReducerAgain = () => {
         numberOfCart: 2
     }
 
+    /* 
+    #############################################################
+    *******************      action type      *******************
+    #############################################################
+    */
     const getProducts = () => {
         return {
             type: GET_PRODUCTS
@@ -50,6 +65,11 @@ const MultipleReducerAgain = () => {
         }
     }
 
+    /* 
+    #############################################################
+    *********************      reducer      *********************
+    #############################################################
+    */
     const productsReducer = (state = initialProducts, action) => {
         switch (action.type) {
             case GET_PRODUCTS:
@@ -82,23 +102,33 @@ const MultipleReducerAgain = () => {
         }
     }
 
-
+    /* 
+    #############################################################
+    **********************      store      **********************
+    #############################################################
+    */
     const productStore = createStore(productsReducer);
 
     productStore.subscribe(() => {
         console.log(productStore.getState());
     })
 
-    productStore.dispatch(getProducts());
-    productStore.dispatch(addProduct('pen'));
-
-
-
+    //============   cart store   =============
     const cartStore = createStore(cartReducer);
 
     cartStore.subscribe(() => {
         console.log(cartStore.getState());
     });
+
+
+
+    /* 
+    #############################################################
+    *****************      dispatch action      *****************
+    #############################################################
+    */
+    productStore.dispatch(getProducts());
+    productStore.dispatch(addProduct('pen'));
 
     cartStore.dispatch(getCart());
     cartStore.dispatch(addCart('cutter'))
