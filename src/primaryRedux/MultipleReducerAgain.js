@@ -1,4 +1,5 @@
 import React from 'react';
+import logger from 'redux-logger';
 
 const MultipleReducerAgain = () => {
     /* 
@@ -7,7 +8,7 @@ const MultipleReducerAgain = () => {
    3- reducer 
    4- store
    */
-    const { createStore, combineReducers } = require('redux');
+    const { createStore, combineReducers, applyMiddleware } = require('redux');
 
     /* 
     #############################################################
@@ -112,7 +113,7 @@ const MultipleReducerAgain = () => {
         cartR: cartReducer
     });
 
-    const store = createStore(rootReducer)
+    const store = createStore(rootReducer, applyMiddleware(logger))
 
 
     /* 
