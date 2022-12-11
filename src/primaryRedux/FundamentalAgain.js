@@ -70,7 +70,6 @@ const FundamentalAgain = () => {
         }
     }
 
-
     // ---------------------       Reducer       --------------------------
 
     const userReducer = (state = initialUser, action) => {

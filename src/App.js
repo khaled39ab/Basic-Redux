@@ -4,7 +4,7 @@ import Theory from './page/Class/Theory';
 import Home from './page/home/Home';
 import Navbar from './page/navbar/Navbar';
 import FundamentalAgain from './primaryRedux/FundamentalAgain';
-import MultipleReducer from './primaryRedux/MultipleReducer';
+import MultipleReducerAgain from './primaryRedux/MultipleReducerAgain';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/theory' element={<Theory />}></Route>
         <Route path='/counter-app' element={<FundamentalAgain />}></Route>
-        <Route path='/multipleReducer' element={<MultipleReducer />}></Route>
+        <Route path='/multipleReducer' element={<MultipleReducerAgain />}></Route>
       </Routes>
     </div>
   );
