@@ -11,11 +11,17 @@ const MultipleReducerAgain = () => {
 
     const GET_PRODUCTS = 'GET_PRODUCTS';
     const ADD_PRODUCT = 'ADD_PRODUCT';
-
+    const GET_CART = 'GET_CART';
+    const ADD_CART = 'ADD_CART';
 
     const initialProducts = {
         products: ['eraser', 'pencil'],
         numberOfProducts: 2
+    }
+
+    const initialCart = {
+        cart: ['pen', 'paper'],
+        numberOfCart: 2
     }
 
     const getProducts = () => {
@@ -27,6 +33,19 @@ const MultipleReducerAgain = () => {
     const addProduct = (product) => {
         return {
             type: ADD_PRODUCT,
+            payload: product
+        }
+    }
+
+    const getCart = () => {
+        return {
+            type: GET_CART
+        }
+    }
+
+    const addCart = (product) => {
+        return {
+            type: ADD_CART,
             payload: product
         }
     }
@@ -47,14 +66,42 @@ const MultipleReducerAgain = () => {
         }
     }
 
+    const cartReducer = (state = initialCart, action) => {
+        switch (action.type) {
+            case GET_CART:
+                return state
+
+            case ADD_CART:
+                return {
+                    cart: [...state.cart, action.payload],
+                    numberOfCart: state.numberOfCart + 1
+                }
+
+            default:
+                return state;
+        }
+    }
+
+
     const productStore = createStore(productsReducer);
 
     productStore.subscribe(() => {
         console.log(productStore.getState());
     })
 
-    productStore.dispatch(getProducts())
-    productStore.dispatch(addProduct('pen'))
+    productStore.dispatch(getProducts());
+    productStore.dispatch(addProduct('pen'));
+
+
+
+    const cartStore = createStore(cartReducer);
+
+    cartStore.subscribe(() => {
+        console.log(cartStore.getState());
+    });
+
+    cartStore.dispatch(getCart());
+    cartStore.dispatch(addCart('cutter'))
 
     return (
         <div>
