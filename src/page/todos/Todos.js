@@ -4,23 +4,27 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk'
 
 const Todos = () => {
+    // async actions - api calling
+    // api url - https://jsonplaceholder.typicode.com/todos
+    // middleware- redux-thunk
+    // axios api
 
     const { createStore, applyMiddleware } = require('redux');
 
-    //constants
+    // define constants
     const GET_TODOS_REQUEST = 'GET_TODOS_REQUEST';
     const GET_TODOS_SUCCESS = 'GET_TODOS_SUCCESS';
     const GET_TODOS_FAILED = 'GET_TODOS_FAILED';
     const TODOS_URL = 'https://jsonplaceholder.typicode.com/todos';
 
-    //state
+    // define state
     const initialTodos = {
         todos: [],
         isLoading: false,
         error: null
     }
 
-    // action
+    // define action
     const getTodosRequest = () => {
         return {
             type: GET_TODOS_REQUEST
@@ -41,7 +45,7 @@ const Todos = () => {
         }
     }
 
-    //reducer
+    // todos reducer
     const todosReducer = (state = initialTodos, action) => {
         switch (action.type) {
             case GET_TODOS_REQUEST:
@@ -69,6 +73,9 @@ const Todos = () => {
         }
     };
 
+
+    // async action creator
+    // thunk-middleware allows us to return a function instead of object
     const fetchData = () => {
         return (dispatch) => {
             dispatch(getTodosRequest());
@@ -85,6 +92,7 @@ const Todos = () => {
         }
     }
 
+    //store
     const store = createStore(todosReducer, applyMiddleware(thunk, logger));
 
     store.subscribe(() => {
