@@ -59,13 +59,13 @@ const Todos = () => {
                 }
 
             default:
-                break;
+                return state;
         }
     }
 
     return (
         <div>
-
+            <h1>Fetch Api with thunk</h1>
         </div>
     );
 };

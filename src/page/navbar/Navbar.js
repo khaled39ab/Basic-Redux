@@ -13,7 +13,7 @@ const Navbar = () => {
                 <NavLink className='link' to={'/'}>Home</NavLink>
                 <NavLink className='link' to={'/theory'}>Theory</NavLink>
                 <NavLink className='link' to={'/counter-app'}>Counter App</NavLink>
-                <NavLink className='link' to={'/multipleReducer'}>Multiple Reducer</NavLink>
+                <NavLink className='link' to={'/todos'}>Todos</NavLink>
             </nav>
         </div>
     );
