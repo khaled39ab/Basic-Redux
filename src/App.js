@@ -5,7 +5,6 @@ import Counter from './page/counter_app/Counter';
 import Home from './page/home/Home';
 import Navbar from './page/navbar/Navbar';
 import Todos from './page/todos/Todos';
-import FundamentalAgain from './primaryRedux/FundamentalAgain';
 
 function App() {
 
