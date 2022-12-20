@@ -9,17 +9,22 @@ const Counter = () => {
     const handleDecrement = () => {
         dispatch(counterDecrement())
     }
+
     const handleReset = () => {
         dispatch(counterReset())
     }
+
     const handleIncrement = () => {
         dispatch(counterIncrement())
     }
+
+
     return (
         <div style={{ textAlign: 'center' }}>
             <h1>Counter App</h1>
 
             <h3>Count: {count}</h3>
+
             <button onClick={handleDecrement}>Decrement</button>
             <button onClick={handleReset}>Reset</button>
             <button onClick={handleIncrement}>Increment</button>

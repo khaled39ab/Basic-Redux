@@ -104,6 +104,7 @@ const Todos = () => {
     return (
         <div>
             <h1>Fetch Api with thunk</h1>
+            <h4 style={{color: 'red'}}>Note: See in console</h4>
         </div>
     );
 };
