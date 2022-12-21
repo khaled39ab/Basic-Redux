@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { counterDecrement, counterIncrement, counterReset } from './action/counterAction';
 
 const Counter = () => {
-    const count = useSelector(state => state.count);
+    const count = useSelector(counterStore => counterStore.count);
     const dispatch = useDispatch();
 
     const handleDecrement = () => {

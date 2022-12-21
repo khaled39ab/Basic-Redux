@@ -4,7 +4,7 @@ import Theory from './page/Class/Theory';
 import Counter from './page/counter_app/Counter';
 import Home from './page/home/Home';
 import Navbar from './page/navbar/Navbar';
-import Todos from './page/todos/Todos';
+import TodosApp from './page/todos_App/TodosApp';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/theory' element={<Theory />}></Route>
         <Route path='/counter-app' element={<Counter />}></Route>
-        <Route path='/todos' element={<Todos />}></Route>
+        <Route path='/todos' element={<TodosApp />}></Route>
       </Routes>
     </div>
   );

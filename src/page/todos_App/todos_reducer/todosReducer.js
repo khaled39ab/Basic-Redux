@@ -30,3 +30,5 @@ const todosReducer = (state = initialValue, action) => {
             return state;
     }
 }
+
+export default todosReducer;
