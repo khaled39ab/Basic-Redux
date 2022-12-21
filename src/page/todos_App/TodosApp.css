@@ -1,0 +1,30 @@
+.todos-title{
+    /* style={{textAlign: 'center', backgroundColor: 'cyan', marginBottom: 0, padding:} */
+    text-align: center;
+    background-color: darkcyan;
+    margin-bottom: 0;
+    padding: 0.5rem;
+    color: purple;
+}
+section {
+    display: grid;
+    grid-gap: 0.5rem;
+    padding: 1rem;
+  }
+  
+  article {
+    background-color: #293462;
+    color: white;
+    padding: 0.5rem;
+  }
+  
+  @media (min-width: 600px) {
+    section {
+      grid-template-columns: auto auto;
+    }
+  }
+  @media (min-width: 768px) {
+    section {
+      grid-template-columns: auto auto auto;
+    }
+  }
