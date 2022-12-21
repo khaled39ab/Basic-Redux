@@ -10,10 +10,12 @@ import todosStore from './todosStore';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={ todosStore}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+  <Provider store={todosStore}>
+    <Provider store={counterStore}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </Provider>
 );
 
